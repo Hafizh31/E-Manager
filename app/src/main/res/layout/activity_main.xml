@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1BFFFFFF"
+    android:gravity="center_horizontal|center_vertical"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/codesc_bg"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/bg" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#40FFFFFF">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/textview"
+            tools:layout_editor_absoluteX="176dp"
+            tools:layout_editor_absoluteY="273dp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/codesc_btn"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:shadowColor="#000000"
+            android:text="@string/start"
+            tools:layout_editor_absoluteX="130dp"
+            tools:layout_editor_absoluteY="341dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
