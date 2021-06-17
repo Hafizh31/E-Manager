@@ -19,26 +19,51 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#40FFFFFF">
+        android:background="#40FFFCFC">
 
         <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/textview"
-            tools:layout_editor_absoluteX="176dp"
-            tools:layout_editor_absoluteY="273dp" />
+            android:id="@+id/textView"
+            android:layout_width="204dp"
+            android:layout_height="63dp"
+            android:layout_marginStart="103dp"
+            android:layout_marginTop="188dp"
+            android:layout_marginEnd="104dp"
+            android:background="#74FDFDFD"
+            android:ellipsize="middle"
+            android:fontFamily="@font/grand_hotel"
+            android:hapticFeedbackEnabled="false"
+            android:shadowRadius="10"
+            android:text="@string/e_manager"
+            android:textAlignment="center"
+            android:textColor="@color/maroon"
+            android:textSize="36sp"
+            android:textStyle="bold|italic"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toTopOf="@+id/btn_start"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/button"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/codesc_btn"
-            android:gravity="center|center_horizontal|center_vertical"
-            android:shadowColor="#000000"
+            android:id="@+id/btn_start"
+            android:layout_width="107dp"
+            android:layout_height="53dp"
+            android:layout_marginStart="152dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="152dp"
+            android:layout_marginBottom="339dp"
             android:text="@string/start"
-            tools:layout_editor_absoluteX="130dp"
-            tools:layout_editor_absoluteY="341dp" />
+            app:backgroundTint="@color/maroon"
+            app:cornerRadius="15dp"
+            app:iconTint="#B32121"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintVertical_bias="1.0" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </RelativeLayout>
