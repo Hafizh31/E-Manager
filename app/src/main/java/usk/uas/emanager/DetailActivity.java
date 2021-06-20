@@ -22,8 +22,7 @@ public class DetailActivity extends AppCompatActivity {
     private DataItem db;
     Button btn_submit, btn_hapus;
     EditText namabarang, harga, satuan;
-    Bitmap bitmapPic;
-    byte[] bytePic;
+
 
 
     @Override
@@ -43,16 +42,16 @@ public class DetailActivity extends AppCompatActivity {
         init();
 
         String id = bundle.getStringExtra("id");
-        String namabarang = bundle.getStringExtra("namabarang");
-        String harga   = bundle.getStringExtra("harga");
-        String satuan = bundle.getStringExtra("satuan");
+        String et_namabarang = bundle.getStringExtra("namabarang");
+        String et_harga   = bundle.getStringExtra("harga");
+        String et_satuan = bundle.getStringExtra("satuan");
 
 
 
 
-        namabarang.setText(namabarang);
-        harga.setText(harga);
-        satuan.setText(satuan);
+        namabarang.setText(et_namabarang);
+        harga.setText(et_harga);
+        satuan.setText(et_satuan);
 
         submit(id);
         hapus(id);
@@ -106,7 +105,6 @@ public class DetailActivity extends AppCompatActivity {
                     startActivity(new Intent(DetailActivity.this, MainActivity.class));
                     Toast.makeText(DetailActivity.this, "Data ID : " + id + " Berhasil diperbarui", Toast.LENGTH_LONG).show();
                     db.updateOne(id, new_namabarang, new_harga, new_satuan );
-                    bytePic = db.bitmapToByte(bitmapPic);
 
                 }
             }

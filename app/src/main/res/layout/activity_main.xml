@@ -1,69 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1BFFFFFF"
-    android:gravity="center_horizontal|center_vertical"
+    android:background="#DDDDDD"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/codesc_bg"
-        android:scaleType="centerCrop"
-        app:srcCompat="@drawable/bg" />
+    <SearchView
+        android:id="@+id/search"
+        android:layout_width="338dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="35dp"
+        android:background="#FFFFFF"
+        app:layout_constraintCircleRadius="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="400dp"
+        android:layout_marginBottom="100dp"
+        android:scrollbars="vertical|horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical|horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_tambah">
+
+            <TableLayout
+                android:id="@+id/tl"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:stretchColumns="*">
+
+            </TableLayout>
+        </HorizontalScrollView>
+    </ScrollView>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#40FFFCFC">
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <TextView
-            android:id="@+id/barang"
-            android:layout_width="204dp"
-            android:layout_height="63dp"
-            android:layout_marginStart="103dp"
-            android:layout_marginTop="188dp"
-            android:layout_marginEnd="104dp"
-            android:background="#74FDFDFD"
-            android:ellipsize="middle"
-            android:fontFamily="@font/grand_hotel"
-            android:hapticFeedbackEnabled="false"
-            android:shadowRadius="10"
-            android:text="@string/e_manager"
-            android:textAlignment="center"
-            android:textColor="@color/maroon"
-            android:textSize="36sp"
-            android:textStyle="bold|italic"
-            app:autoSizeTextType="uniform"
-            app:layout_constraintBottom_toTopOf="@+id/btn_start"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="207dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="38dp"
+        android:text="@string/hitung"
+        android:textColor="@color/black"
+        app:backgroundTint="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
-        <Button
-            android:id="@+id/btn_start"
-            android:layout_width="107dp"
-            android:layout_height="53dp"
-            android:layout_marginStart="152dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="152dp"
-            android:layout_marginBottom="339dp"
-            android:text="@string/start"
-            app:backgroundTint="@color/maroon"
-            app:cornerRadius="15dp"
-            app:iconTint="#B32121"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/barang"
-            app:layout_constraintVertical_bias="1.0" />
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="207dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="38dp"
+        android:text="@string/tambah_barang"
+        android:textColor="@color/black"
+        app:backgroundTint="#FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

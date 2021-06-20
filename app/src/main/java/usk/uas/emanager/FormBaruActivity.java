@@ -16,7 +16,7 @@ public class FormBaruActivity extends AppCompatActivity {
 
     private DataItem db;
     Button btn_submit;
-    EditText et_npm, et_nama, et_jurusan;
+    EditText namabarang, harga, satuan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,36 +30,36 @@ public class FormBaruActivity extends AppCompatActivity {
         }
 
         btn_submit = findViewById(R.id.btn_submit);
-        et_jurusan = findViewById(R.id.satuanbarang);
-        et_nama = findViewById(R.id.hargabarang);
-        et_npm = findViewById(R.id.namabarang);
+        satuan = findViewById(R.id.satuanbarang);
+        harga = findViewById(R.id.hargabarang);
+        namabarang = findViewById(R.id.namabarang);
 
 
         btn_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                String npm = et_npm.getText().toString();
-                String nama = et_nama.getText().toString();
-                String jurusan = et_jurusan.getText().toString();
+                String et_nama = namabarang.getText().toString();
+                String et_harga = harga.getText().toString();
+                String et_satuan = satuan.getText().toString();
 
-                if( TextUtils.isEmpty(et_npm.getText())){
+                if( TextUtils.isEmpty(namabarang.getText())){
                     Toast.makeText(FormBaruActivity.this, "Gagal!", Toast.LENGTH_SHORT).show();
-                    et_npm.requestFocus();
-                    et_npm.setError( "Nama Barang tidak boleh kosong!" );
+                    namabarang.requestFocus();
+                    namabarang.setError( "Nama Barang tidak boleh kosong!" );
 
-                }else if( TextUtils.isEmpty(et_nama.getText())){
+                }else if( TextUtils.isEmpty(harga.getText())){
                     Toast.makeText(FormBaruActivity.this, "Gagal!", Toast.LENGTH_SHORT).show();
-                    et_nama.requestFocus();
-                    et_nama.setError( "Harga tidak boleh kosong!" );
+                    harga.requestFocus();
+                    harga.setError( "Harga tidak boleh kosong!" );
 
-                }else if( TextUtils.isEmpty(et_jurusan.getText())) {
+                }else if( TextUtils.isEmpty(satuan.getText())) {
                     Toast.makeText(FormBaruActivity.this, "Gagal!", Toast.LENGTH_SHORT).show();
-                    et_jurusan.requestFocus();
-                    et_jurusan.setError("Satuan tidak boleh kosong!");
+                    satuan.requestFocus();
+                    satuan.setError("Satuan tidak boleh kosong!");
 
                 }else {
-                    db.addItem(new Item(npm, nama, jurusan));
+                    db.addItem(new Item(et_nama, et_harga, et_satuan));
                     Toast.makeText(FormBaruActivity.this, "Data Item telah ditambahkan", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 }

@@ -10,6 +10,12 @@
     <string name="harga_barang">Harga Barang</string>
     <string name="satuan">Satuan</string>
     <string name="submit">Submit</string>
+    <string name="e_manager">E-Manager</string>
+    <string name="ubah_harga">Ubah Harga</string>
+    <string name="hapus_mahasiswa">Hapus Mahasiswa</string>
+    <string name="edit_harga">edit harga</string>
+    <string name="hitung">hitung</string>
+    <string name="tambah_barang">tambah barang</string>
 
 
 </resources>
