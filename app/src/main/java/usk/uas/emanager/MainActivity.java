@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private SearchView searchView;
     private ScrollView toolbar;
     Button button3;
-
+    Button button2;
 
 
     TableRow tb;
@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
         db = new DataItem(this);
         tl = findViewById(R.id.tl);
+        button2 = findViewById(R.id.button2);
         try {
             db.open();
         } catch (SQLException throwables) {
@@ -347,7 +348,12 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Kalkulator.class));
+            }
+        });
     }
 
 

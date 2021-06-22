@@ -16,6 +16,9 @@
     <string name="edit_harga">edit harga</string>
     <string name="hitung">hitung</string>
     <string name="tambah_barang">tambah barang</string>
+    <string name="total_belanjaan_anda_adalah_sebesar">Total Belanjaan anda adalah sebesar</string>
+    <string name="kembali">KEMBALI</string>
+    <string name="rp_30_000">Rp. 30.000</string>
 
 
 </resources>

@@ -11,6 +11,7 @@
         android:theme="@style/Theme.EManager">
         <activity android:name=".FormBaruActivity"></activity>
         <activity android:name=".DetailActivity"></activity>
+        <activity android:name=".Kalkulator"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
