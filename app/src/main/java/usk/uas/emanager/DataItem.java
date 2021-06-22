@@ -54,7 +54,7 @@ public class DataItem {
         List<Item> listItem = new ArrayList<Item>();
 
         //select all data item
-        String allItem = "SELECT * FROM " + TABLE_ITEM;
+        String allItem = "SELECT * FROM " + TABLE_ITEM + " ORDER BY namabarang";
         Cursor cursor = database.rawQuery(allItem, null);
 
         //looping through all rows and adding to list
@@ -80,13 +80,13 @@ public class DataItem {
         database.execSQL(queryString);
     }
 
-    public void updateOne(String id, String new_npm, String new_nama, String new_jurusan){
+    public void updateOne(String id, String new_namabarang, String new_harga, String new_satuan){
         database = dbhelper.getWritableDatabase();
         String queryString = "UPDATE " + TABLE_ITEM +
                 " SET "
-                + KEY_NAMABARANG + " = '" + new_npm +"',"
-                + KEY_HARGA + " = '" + new_nama + "',"
-                + KEY_SATUAN + " = '" + new_jurusan+
+                + KEY_NAMABARANG + " = '" + new_namabarang +"',"
+                + KEY_HARGA + " = '" + new_harga + "',"
+                + KEY_SATUAN + " = '" + new_satuan+
                 "' WHERE " + KEY_ID + " = " +id;
 //        String m = "UPDATE tb_item SET nama='aaaaaaaaaaa' WHERE id=8";
         database.execSQL(queryString);
@@ -94,25 +94,31 @@ public class DataItem {
 
 
 
-    public static byte[] bitmapToByte(Bitmap bitmap) {
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 85, outputStream);
-        return outputStream.toByteArray();
+
+
+    public List<Item> searched(String s){
+        List<Item> listSearched = new ArrayList<Item>();
+
+        //select all data item
+        String cari = "SELECT * FROM " + TABLE_ITEM + " WHERE namabarang = " + "'" + s + "'";
+        Cursor cursor = database.rawQuery(cari, null);
+
+        //looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                Item item = new Item();
+                item.set_id(Integer.parseInt(cursor.getString(0)));
+                item.set_namabarang(cursor.getString(1));
+                item.set_harga(cursor.getString(2));
+                item.set_satuan(cursor.getString(3));
+
+                //adding item to the list
+                listSearched.add(item);
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        return listSearched;
     }
 
-    public Bitmap getImage(String id){
-        database = dbhelper.getReadableDatabase();
-        Bitmap pic = null;
-        String getPicQuery = "SELECT "+" FROM " + TABLE_ITEM + " WHERE id="+ id;
-        Cursor cursor = database.rawQuery(getPicQuery,null);
-        if(cursor.moveToFirst()){
-            byte[] bytepic = cursor.getBlob(0);
-            if(bytepic == null){
-                return pic;
-            }
-            pic = BitmapFactory.decodeByteArray(bytepic, 0, bytepic.length);
-            return pic;
-        }
-        return pic;
-    }
 }

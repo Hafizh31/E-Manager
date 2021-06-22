@@ -47,6 +47,23 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <Button
+            android:id="@+id/button"
+            android:layout_width="41dp"
+            android:layout_height="43dp"
+
+            android:text="+"
+            tools:layout_editor_absoluteX="232dp"
+            tools:layout_editor_absoluteY="235dp" />
+
+        <ImageButton
+            android:id="@+id/imageButton5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_input_add"
+            tools:layout_editor_absoluteX="59dp"
+            tools:layout_editor_absoluteY="113dp" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

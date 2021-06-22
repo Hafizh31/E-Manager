@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <SearchView
-        android:id="@+id/search"
+        android:id="@+id/Search"
         android:layout_width="338dp"
         android:layout_height="43dp"
         android:layout_marginStart="36dp"
@@ -58,17 +58,6 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="207dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="38dp"
-        android:text="@string/hitung"
-        android:textColor="@color/black"
-        app:backgroundTint="#FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
-
-    <Button
         android:id="@+id/button3"
         android:layout_width="207dp"
         android:layout_height="65dp"
@@ -77,6 +66,17 @@
         android:textColor="@color/black"
         app:backgroundTint="#FFFFFF"
         app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="207dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="38dp"
+        android:text="@string/hitung"
+        android:textColor="@color/black"
+        app:backgroundTint="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
 
